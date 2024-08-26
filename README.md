@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# IB Coursework Evaluator
 
-## Getting Started
+This is a web application built for evaluating International Baccalaureate (IB) coursework. The application is developed using Next.js 14, TailwindCSS, Zustand for state management.
 
-First, run the development server:
+## Setup Instructions
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js (version 14 or higher)
+- npm or yarn
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Clone the repository:**
 
-## Learn More
+   ```bash
+   git clone https://github.com/HashirRehman/ib-coursework-evaluator
+   cd ib-coursework-evaluator
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies:**
+   ```
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Run the development server:**
+   ```
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Assumptions and Design Decisions
 
-## Deploy on Vercel
+- Local Storage for Persistence:
+  All uploaded coursework files, metadata, and evaluation results are stored locally in the browser's local storage. This ensures data   persistence across page reloads without a backend.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Mock Data for Evaluation Display:
+  Since no real evaluation logic is implemented, mock data is used to display scores and criteria breakdown.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Challenges Faced
+- TypeScript Type Errors:
+
+  Challenge: Encountered a type error when managing coursework data.
+  Solution: Defined a Coursework type to explicitly describe the shape of the data, ensuring proper type-checking and avoiding never type issues.
+- Next.js Link Component:
+
+  Challenge: Faced an error related to the usage of the <Link> component with an <a> tag.
+  Solution: Removed the anchor tag.
